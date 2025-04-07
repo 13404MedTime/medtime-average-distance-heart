@@ -33,3 +33,26 @@ type ClientApiData struct {
 type ClientApiResp struct {
     Response map[string]interface{} `json:"response"`
 }
+
+type HttpRequest struct {
+    Method  string      `json:"method"`
+    Path    string      `json:"path"`
+    Headers http.Header `json:"headers"`
+    Params  url.Values  `json:"params"`
+    Body    []byte      `json:"body"`
+}
+
+type AuthData struct {
+    Type string                 `json:"type"`
+    Data map[string]interface{} `json:"data"`
+}
+
+type NewRequestBody struct {
+    RequestData HttpRequest            `json:"request_data"`
+    Auth        AuthData               `json:"auth"`
+    Data        map[string]interface{} `json:"data"`
+}
+
+type Request struct {
+    Data map[string]interface{} `json:"data"`
+}
