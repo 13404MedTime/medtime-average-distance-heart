@@ -1,0 +1,16 @@
+version: 1.0
+provider:
+  name: openfaas
+  gateway: https://ofs.u-code.io
+functions:
+  cardioapp-average-distance-heart:
+    lang: go
+    handler: ./cardioapp-average-distance-heart
+    image: gitlab.udevs.io:5050/ucode_functions_group/cardioapp-average-distance-heart/cardioapp-average-distance-heart:latest
+
+    constraints:
+    - "workload=openfaas-fn"
+    limits:
+      memory: 300Mi
+    requests:
+      memory: 5Mi
