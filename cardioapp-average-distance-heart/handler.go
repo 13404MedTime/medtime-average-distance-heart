@@ -56,3 +56,15 @@ type NewRequestBody struct {
 type Request struct {
     Data map[string]interface{} `json:"data"`
 }
+
+type GetListClientApiResponse struct {
+    Data GetListClientApiData `json:"data"`
+}
+
+type GetListClientApiData struct {
+    Data GetListClientApiResp `json:"data"`
+}
+
+type GetListClientApiResp struct {
+    Response []map[string]interface{} `json:"response"`
+}
